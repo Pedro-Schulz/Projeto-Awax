@@ -1,0 +1,765 @@
+/* ======================================================================================================================
+                                                  BASE GERAL DO SITE
+=======================================================================================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    width: 100%;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ELEMENTOS PRÉ-DEFINIDOS */
+
+.container {
+    width: 1140px;
+    height: 100px;
+    margin:auto;
+    display: flex;
+}
+
+/* ======================================================================================================================
+                                                    HEADER
+=======================================================================================================================*/
+
+
+/* BASE DO HEADER */
+header {
+    height:100px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+}
+.container:nth-child(1) {
+    justify-content: space-between;
+}
+/* LOGO DO SITE */
+.div_logo {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    height: 70%;
+    width: auto;
+}
+/* MENU */
+.itens_menu {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+}
+.cat_menu {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    border-bottom: 5px solid black;
+    font-weight: 700;
+}
+.cat_menu:hover,
+.active {
+    border-bottom: 5px solid #b28756;
+    color: #ccc;
+}
+
+/* ======================================================================================================================
+                                                    BANNER
+=======================================================================================================================*/
+
+/* BASE DO BANNER */
+.banner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: rgba(0, 0, 0, 1);
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: bottom;
+    overflow: hidden;
+}
+.banner .slides {
+    height: 100%;
+    width: 500vw;
+}
+.banner .slide {
+    height: 100%;
+    width: 100vw;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* PRIMEIRO SLIDE */
+.banner .slide:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide:first-child .cont_slide {
+    text-transform: uppercase;
+}
+.slide:first-child .cont_slide h1 {
+    font-size: 70px;
+}
+
+/* ESCRITA */
+.banner h1 span:first-child {
+    color: #FFF;
+    line-height: 0.7;
+}
+.banner h1 span:nth-child(2) {
+    color: #b28756;
+}
+.banner h1 span {
+    display: block;
+}
+.banner h5 {
+    color: #FFF;
+    font-size: 22px;
+    justify-self: center;
+    margin-top: 7px;
+}
+
+/* BOTÃO */
+.banner button {
+    background-color: #b28756;
+    height: 50px;
+    width: 200px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border: none;
+    justify-self: center;
+    display: block;
+    margin-top: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.banner button:hover {
+    background-color: #9b744c;
+    color: #ccc;
+    transform: scale(1.08);
+}
+.banner button:active {
+    transform: scale(0.96);
+}
+
+/* POINTERS */
+.pointers_slides {
+    width: 100vw;
+    height: 20px;
+    position: absolute;
+    margin-top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pointer {
+    height: 14px;
+    width: 14px;
+    border: 2px solid #b28756;
+    border-radius: 7px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.pointer.active {
+    background-color: #b28756;
+}
+
+/* ======================================================================================================================
+                                                 1 - ABOUT US
+=======================================================================================================================*/
+
+
+/* BASE */
+.default {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+}
+.default .title_default {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 32px;
+    margin-top: 70px;
+}
+
+/* CONTEÚDO */
+.default.light .title_default h3 {
+    font-size: 28px;
+    color: #000;
+}
+.default.light .title_default h6 {
+    font-size: 13px;
+    color: #AAA;
+}
+.default .cont_default {
+    width: 1140px;
+    display: flex;
+    flex-direction: row;
+}
+.default.light .cont_default {
+    justify-content: space-between;
+    height: 300px;
+    margin: 40px 0 80px 0;
+}
+.default .desc_default {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    height: 100%;
+    width: 60%;
+    color: #111;
+    font-size: 15px;
+    font-family: 'Monteserrat', sans-serif;
+    line-height: 25px;
+    font-weight: 300;
+}
+.image_default {
+    height: 89%;
+    width: auto;
+    box-shadow: 0px 5px 10px #333;
+    cursor: pointer;
+}
+
+/* BOTÃO */
+.default.light .button_default {
+    width: 200px;
+    height: 48px;
+    color: #FFF;
+    background-color: #b28756;
+    border-radius: 20px;
+    border: none;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.default.light .button_default:hover {
+    background-color: #9b744c;
+    color: #CCC;
+    transform: scale(1.04);
+}
+.default.light .button_default:active {
+    transform: scale(0.98);
+}
+
+/* ======================================================================================================================
+                                                  2 - SERVICES
+=======================================================================================================================*/
+
+
+/* BASE */
+.default.black {
+    width: 100vw;
+    height: 400px;
+    background-color: #000;
+}
+
+/* ESCRITA TíTULO */
+.default.black .title_default {
+    margin: 5px 0 10px 0;
+}
+.default.black .title_default h3 {
+    color: #FFF;
+    font-size: 28px;
+}
+.default.black .title_default h6 {
+    color: #AAA;
+    font-size: 13px;
+}
+/* ESCRITA CONTEÚDO */
+.default.black .title_default h5 {
+    color: #FFF;
+    font-size: 15px;
+}
+.default.black .title_default p {
+    color: #AAA;
+    font-size: 10px;
+    text-transform: none;
+    line-height: 18px;
+    text-align: center;
+}
+
+/* CONTEÚDO */
+.default.black .cont_default {
+    height: 190px;
+    margin-top: 30px;
+}
+.cont_default .cat_default {
+    height: 100%;
+    width: 285px;
+    border-left: 1px solid #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cont_default .cat_default:last-child {
+    border-right: 1px solid #777;
+}
+.cat_default .simb_default {
+    height: 50px;
+    width: auto;
+    margin: 15px auto
+}
+
+/* ======================================================================================================================
+                                                 3 - PROJECTS
+=======================================================================================================================*/
+
+/* BARRA DE OPÇÕES */
+.default.light .opc_default {
+    display: flex;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 22px;
+    cursor: pointer;
+    margin: 40px 0 30px 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.opc_default .opc {
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px;
+    border-right: 1px solid #CCC;
+    display: block;
+    box-sizing: border-box;
+    border-bottom: #EEE;
+}
+.opc_default .opc:hover {
+    background-color: #DDD;
+}
+.opc_default .opc:first-child {
+    padding-left: 40px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+}
+.opc_default .opc:last-child {
+    padding-right: 40px;
+    border-right: none;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+.opc.active {
+    border-bottom: 4px solid #b28756;
+    color: #000;
+}
+.opc:hover {
+    border-bottom: 4px solid #b28756;
+}
+
+/* BOTÃO REDUZIDO */
+.default.light .button_default.little {
+    width: 160px;
+    height: 40px;
+    font-size: 10px;
+    border-radius: 17px;
+    margin-bottom: 50px;
+}
+
+/* CONTEÚDO */
+.default.light .container {
+    height: auto;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* IMAGENS */
+.container .div_img_default {
+    background-image: url('../../media/foto6.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 175px;
+    width: auto;
+}
+.div_img_default .image_default {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 175px;
+    width: 260px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div_img_default .image_default:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.image_default .desc_img {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+}
+
+/* TEXTO DAS IMAGENS */
+.image_default .desc_img {
+    opacity: 0;
+    color: #EEE;
+}
+.image_default:hover .desc_img {
+    opacity: 1;
+}
+.desc_img h4 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+.desc_img p {
+    font-size: 13px;
+    font-family: 'Monteserrat', sans-serif;
+    line-height: 25px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* ======================================================================================================================
+                                                 4 - TEAM
+=======================================================================================================================*/
+
+/* FUNDO */
+.default.black.team {
+    height: auto;
+    background-image: url("../images/img_cidade.webp");
+}
+.default.black.team .escurecer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8 );
+}
+
+/* TÍTULO */
+.default.black.team .title_default {
+    margin: 60px 0 35px 0;
+}
+
+/* CONTEÚDO */
+.default.black.team .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+.people_default {
+    height: 450px;
+    width: calc(100% / 3 - 40px);
+    background-color: #FFF;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.people_default:last-child {
+    margin-right: 0;
+}
+.default.black.team .pointers_slides {
+    position: relative;
+    margin: 40px 0 30px 0;
+}
+.people_default .desc_img {
+    line-height: 0px;
+}
+
+/* IMAGENS */
+.people_default .people_img {
+    width: auto;
+    height: 180px;
+    margin: 0 0 50px 0;
+}
+.people_default .apps_default {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.apps_default .app_default {
+    height: 100%;
+    width: 30px;
+    border-radius: 20px;
+    background-color: #AAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    transition: all 0.3s ease;
+}
+.apps_default .app_default:hover {
+    background-color: #b28756;
+}
+.app_default .app_logo {
+    height: 12px;
+    width: auto;
+}
+
+/* ======================================================================================================================
+                                                 5 - CLIENTS
+=======================================================================================================================*/
+
+/* BASE */
+.default.light.gray {
+    background-color: #DDD;
+    border: 1px solid #AAA;
+    height: auto;
+}
+.default.light.gray .cont_default {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+}
+
+/* CLIENTE */
+.people_img {
+    width: 170px;
+    height: 170px;
+}
+.name_people {
+    font-size: 20px;
+    margin: 20px 0 8px 0;
+}
+.function_people {
+    font-size: 14px;
+    color: #111;
+    margin-bottom: 30px;
+}
+.default.light.gray p {
+    font-size: 12px;
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* POINTER */
+.default.light.gray .pointers_slides {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* ======================================================================================================================
+                                                 5 - EMPRESAS
+=======================================================================================================================*/
+
+/* BASE */
+.default_empresas {
+    width: 100vw;
+    height: auto;
+}
+
+/* LOGOS */
+.default_empresas .container {
+    justify-content: space-between;
+    align-items: center;
+    height: 127px;
+}
+.container .logo_empresa {
+    height: 45px;
+    width: auto;
+}
+
+/* ======================================================================================================================
+                                                 6 - PRICE
+=======================================================================================================================*/
+
+/* BASE */
+.default.light.gray .container {
+    height: auto;
+}
+
+/* CONTEÚDO */
+.container .assinaturas {
+    height: auto; 
+    width: calc(100% / 4 - 24px);
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* CABEÇALHO ASSINATURAS */
+.assinaturas .plano {
+    text-transform: uppercase;
+    color: #111;
+    font-size: 13px;
+    padding: 40px 0 11px 0;
+}
+.assinaturas .valor {
+    font-size: 33px;
+}
+.assinaturas .periodo {
+    text-transform: uppercase;
+    color: #AAA;
+    font-size: 10px;
+}
+
+/* DESCRIÇÃO ASSINATURAS */
+.cont_plano {
+    height: 200px;
+    width: 150px;
+    margin-top: 20px;
+    position: relative;
+}
+.cont_plano p {
+    padding: 5px 0;
+    line-height: 8px;
+}
+.cont_plano hr {
+    width: 10px;
+    height: 1px;
+    border-top: 1px solid #777;
+    position: absolute;
+    left: 47%;
+    transform: translateY(-47%);
+    margin-top: 10px;
+}
+
+/* BOTÃO    */
+.default.light.gray .assinaturas .button_default {
+    height: 45px;
+    width: 125px;
+    border-radius: 20px;
+    margin: 10px 0 25px 0;
+    background-color: #333;
+}
+.default.light.gray .assinaturas .button_default:hover {
+    background-color: #b28756;
+    transform: scale(1.02);
+}
+.default.light.gray .assinaturas .button_default:active {
+    transform: scale(0.98);
+}
+
+/* ======================================================================================================================
+                                                 7 - PREMIUM
+=======================================================================================================================*/
+
+
+/* BASE */
+.default.light.box {
+    height: auto;
+}
+.default.light.box .container {
+    height: 410px;
+    justify-content: center;
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 40px;
+}
+
+/* POINTER */
+.default.light.box .pointers_slides, .pointer {
+    position: relative;
+    margin-top: 0;
+}
+
+/* IMAGEM DA CAIXA */
+.image_box {
+    width: 40%;
+    height: 100%;
+    display: flex;
+}
+.box {
+    height: 330px;
+    width: auto;
+    align-self: center;
+    justify-self: center;
+    margin-left: 40px;
+}
+
+/* DIVS DE CONTEÙDO */
+.cont_box {
+    width: auto;
+    height: 100%;
+    padding: 0 100px;
+}
+.cont_box .line {
+    display: flex;
+    margin-top: 20px;
+}
+.cont_box .desc {
+    padding-left: 25px;
+}
+
+/* IMAGEM CHECK */
+.cont_box img {
+    height: 30px;
+    width: auto;
+}
+
+/* CONTEÚDO (ESCRITAS) */
+.cont_box h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 5px 0;
+}
+.cont_box p {
+    line-height: 23px;
+    color: #999;
+}
+
+.cont_box p:nth-child(3) {
+    padding-top: 8px;
+}
+
+/* BOTÃO */
+.default.light.box .button_default {
+    height: 42px;
+    margin-bottom: 60px;
+}
+
+/* ======================================================================================================================
+                                                 8 - SOME FACTS
+=======================================================================================================================*/
+
+.default.black.facts .cont_default .cat_default {
+    border: none;
+    position: relative;
+}
+.cat_default h1 {
+    color: #b28756;
+    font-size: 40px;
+}
+.cat_default hr {
+    border-bottom: 2px solid #777;
+    height: 2px;
+    width: 15px;
+    position: absolute;
+    top: 82px;
+}
+
+/* ======================================================================================================================
+                                                 8 - SOME FACTS
+=======================================================================================================================*/
