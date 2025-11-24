@@ -72,6 +72,9 @@ header {
     border-bottom: 5px solid #b28756;
     color: #ccc;
 }
+.menu_opener {
+    display: none;
+}
 
 /* ======================================================================================================================
                                                     BANNER
@@ -90,25 +93,23 @@ header {
 .banner .slides {
     height: 100%;
     width: 500vw;
+    display: flex;
 }
 .banner .slide {
     height: 100%;
-    width: 100vw;
-    display: inline-block;
+    width: 100vw;;
     background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* PRIMEIRO SLIDE */
-.banner .slide:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .slide:first-child .cont_slide {
     text-transform: uppercase;
 }
 .slide:first-child .cont_slide h1 {
-    font-size: 70px;
+    font-size: clamp(30px, 5vw, 70px);
 }
 
 /* ESCRITA */
@@ -241,7 +242,7 @@ header {
 }
 
 /* BOTÃO */
-.default.light .button_default {
+.button_default {
     width: 200px;
     height: 48px;
     color: #FFF;
@@ -256,12 +257,12 @@ header {
     margin-top: 30px;
     cursor: pointer;
 }
-.default.light .button_default:hover {
+.button_default:hover {
     background-color: #9b744c;
     color: #CCC;
     transform: scale(1.04);
 }
-.default.light .button_default:active {
+.button_default:active {
     transform: scale(0.98);
 }
 
@@ -744,22 +745,319 @@ header {
                                                  8 - SOME FACTS
 =======================================================================================================================*/
 
-.default.black.facts .cont_default .cat_default {
+/* CONTEÚDO */
+.default.black.facts {
+    height: auto;
+}
+.default.black.facts .cont_default {
+    margin-bottom: 25px;
+}
+.default.black.facts .cat_default {
     border: none;
-    position: relative;
+}
+/* ESCRITA */
+.default.black.facts .title_default.principal {
+    margin: 60px 0 -25px 0;
 }
 .cat_default h1 {
     color: #b28756;
     font-size: 40px;
 }
+/* LINHA DIVISÓRIA */
 .cat_default hr {
     border-bottom: 2px solid #777;
     height: 2px;
     width: 15px;
-    position: absolute;
-    top: 82px;
+    margin-bottom: -8px;
+    margin-top: 2px;
 }
 
 /* ======================================================================================================================
-                                                 8 - SOME FACTS
+                                                 9 - SHARE
 =======================================================================================================================*/
+
+.share {
+    width: 100vw;
+    height: 80px;
+    border-bottom: 1px solid #CCC;
+}
+.cont_share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.cat_share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.cat_share div {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cat_share:nth-child(1) img {
+    height: 30px;
+}
+.cat_share:nth-child(2) div {
+    background-color: #1DA1F2;
+}
+.cat_share:nth-child(3) div {
+    background-color: #0077B5;
+}
+.cat_share:nth-child(4) div {
+    background-color: #3B5998;
+}
+.cat_share:nth-child(5) div {
+    background-color: #DB4437;
+}
+.cat_share:nth-child(6) div {
+    background-color: #BD081C;
+}
+.cat_share img {
+    width: auto;
+    height: 14px;
+}
+.cat_share p {
+    color: #AAA;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 30px;
+}
+.cat_share:nth-child(1) p {
+    font-size: 14px;
+}
+
+/* ======================================================================================================================
+                                                 10 - CONTACT
+=======================================================================================================================*/
+
+.default.default.light.gray.contact {
+    background-color: #F0F0F0;
+    border: 1px solid #DDD;
+}
+.default.light.gray.contact button {
+    height: 40px;
+    width: 170px;
+    border-radius: 18px;
+    margin-bottom: 65px;
+    margin-top: 50px;
+}
+.default_form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #AAA;
+    outline: none;
+    height: 30px;
+    padding: 20px 0;
+    margin-top: 30px;
+    color: #888;
+    font-size: 13px;
+    cursor: pointer;
+}
+.first_line_form input {
+    width: 47.1%;
+    margin-top: 50px;
+}
+.first_line_form input:first-child {
+    margin-right: 25px;
+}
+input::placeholder {
+    text-transform: uppercase;
+    color: #AAA;
+    font-size: 12px;
+}
+
+/* ======================================================================================================================
+                                                 11 - MAP
+=======================================================================================================================*/
+
+.map {
+    background-image: url(../../media/mapa.png);
+    background-size: cover;
+    height: auto;
+    width: 100%;
+}
+.map .escurecer {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.map .container {
+    height: auto;
+}
+.cont_map {
+    height: auto;
+    width: 520px;
+    margin: 40px 0;
+    background-color: #FFF;
+    padding: 50px 0 30px 45px;
+    border-radius: 3px;
+}
+.line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.cont_map .line div {
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+    background-color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cont_map div img {
+    width: auto;
+    height: 15px;
+}
+.cont_map .line:first-child img {
+    height: 10px;
+    width: auto;
+}
+.line p {
+    color: #555;
+    margin-left: 12px;
+}
+.local_map {
+    width: auto;
+    height: 60px;
+    padding-right: 180px;
+    cursor: pointer;
+}
+.map .escurecer .container {
+    align-items: center;
+}
+
+/* ======================================================================================================================
+                                                 12 - FOOTER
+=======================================================================================================================*/
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    padding: 30px 0;
+}
+footer .container {
+    height: auto;
+}
+.icons {
+    display: flex;
+}
+.icons div {
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    background-color: #444;
+    transition: all ease 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7px;
+}
+.icons div:hover {
+    background-color: #b28756;
+}
+.icons div img {
+    height: 13px;
+    width: auto;
+}
+.text {
+    width: 400px;
+    margin: 0 30px;
+}
+.text p {
+    font-size: 12px;
+    color: #777;
+    font-weight: 600;
+    line-height: 20px;
+}
+.subscribe {
+    height: 180px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+    border-radius: 3px;
+}
+.subscribe .button_default {
+    width: 170px;
+    height: 40px;
+    font-size: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.subscribe input {
+    padding: 0;
+    margin: 0;
+}
+.subscribe input::placeholder {
+    text-align: center;
+}
+
+/* ======================================================================================================================
+                                                 13 - RESPONSIVIDADE
+=======================================================================================================================*/
+
+@media (min-width: 420px) and (max-width: 800px) {
+    .itens_menu {
+        position: absolute;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        right: 0;
+        top: 100px;
+        width: 70vw;
+        height: calc(100vh - 100px);
+        opacity: 0;
+    /* Transição do menu */
+        transform: translateX(30px); 
+        pointer-events: none;
+        transition: all 0.3s ease;
+        display: flex;
+    }
+    /* Quando ativar: APARECE */
+    .itens_menu.ativo {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+    .itens_menu a {
+        font-weight: bold;
+        height: 60px;
+        font-size: 20px;
+        border: none;
+        margin-left: 50px;
+    }
+    .itens_menu a:first-child {
+        margin-top: 20px;
+    }
+    .cat_menu:hover,
+    .active {
+        border: none;
+        color: #b28756;
+    }
+    .menu_opener {
+        display: block;
+        width: auto;
+        height: 35px;
+        align-self: center;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+}
