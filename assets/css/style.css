@@ -213,7 +213,7 @@ header {
     color: #AAA;
 }
 .default .cont_default {
-    width: 1140px;
+    max-width: 1140px;
     display: flex;
     flex-direction: row;
 }
@@ -319,6 +319,7 @@ header {
 }
 .cont_default .cat_default:last-child {
     border-right: 1px solid #777;
+    border-left: none;
 }
 .cat_default .simb_default {
     height: 50px;
@@ -348,7 +349,7 @@ header {
     border-right: 1px solid #CCC;
     display: block;
     box-sizing: border-box;
-    border-bottom: #EEE;
+    border-bottom: 4px solid #EEE;
 }
 .opc_default .opc:hover {
     background-color: #DDD;
@@ -382,10 +383,17 @@ header {
 }
 
 /* CONTEÚDO */
-.default.light .container {
+.default.light.projects .container {
+    display: flex;
+    flex-wrap: wrap;
     height: auto;
-    justify-content: space-between;
+    max-height: 1000px;
+    width: auto;
+    max-width: 1140px;
+    justify-content: center;
+    gap: 30px;
     margin-top: 30px;
+    overflow-y: hidden;
 }
 
 /* IMAGENS */
@@ -394,7 +402,8 @@ header {
     background-size: cover;
     background-position: center;
     height: 175px;
-    width: auto;
+    width: 260px;
+    flex-shrink: 0;
 }
 .div_img_default .image_default {
     background-color: rgba(0, 0, 0, 0.3);
@@ -575,18 +584,31 @@ header {
 
 /* BASE */
 .default_empresas {
-    width: 100vw;
+    width: 100%;
     height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* LOGOS */
 .default_empresas .container {
     justify-content: space-between;
     align-items: center;
-    height: 127px;
+    height: auto;
+    width: auto;
+    max-width: 1140px;
+}
+.default_empresas .container div {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
 }
 .container .logo_empresa {
-    height: 45px;
+    max-height: 45px;
     width: auto;
 }
 
@@ -597,6 +619,8 @@ header {
 /* BASE */
 .default.light.gray .container {
     height: auto;
+    align-items: center ;
+    justify-content: center;
 }
 
 /* CONTEÚDO */
@@ -608,7 +632,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 60px;
+    margin: 20px 20px 60px 20px;
 }
 
 /* CABEÇALHO ASSINATURAS */
@@ -778,7 +802,7 @@ header {
 
 .share {
     width: 100vw;
-    height: 80px;
+    height: auto;
     border-bottom: 1px solid #CCC;
 }
 .cont_share {
@@ -786,6 +810,8 @@ header {
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding: 20px 0;
+    flex-wrap: wrap;
 }
 .cat_share {
     display: flex;
@@ -840,7 +866,7 @@ header {
                                                  10 - CONTACT
 =======================================================================================================================*/
 
-.default.default.light.gray.contact {
+.default.light.gray.contact {
     background-color: #F0F0F0;
     border: 1px solid #DDD;
 }
@@ -868,17 +894,19 @@ input {
     font-size: 13px;
     cursor: pointer;
 }
-.first_line_form input {
-    width: 47.1%;
-    margin-top: 50px;
-}
-.first_line_form input:first-child {
-    margin-right: 25px;
-}
 input::placeholder {
     text-transform: uppercase;
     color: #AAA;
     font-size: 12px;
+}
+@media (min-width: 800px) {
+    .first_line_form input {
+        width: 47.1%;
+        margin-top: 50px;
+    }
+    .first_line_form input:first-child {
+        margin-right: 25px;
+    }
 }
 
 /* ======================================================================================================================
@@ -934,8 +962,9 @@ input::placeholder {
 .local_map {
     width: auto;
     height: 60px;
-    padding-right: 180px;
+    padding-right: 30px;
     cursor: pointer;
+    align-self: center;
 }
 .map .escurecer .container {
     align-items: center;
@@ -1014,7 +1043,9 @@ footer .container {
                                                  13 - RESPONSIVIDADE
 =======================================================================================================================*/
 
-@media (min-width: 420px) and (max-width: 800px) {
+@media (max-width: 800px) {
+
+/* MENU */
     .itens_menu {
         position: absolute;
         z-index: 99;
@@ -1031,7 +1062,6 @@ footer .container {
         transition: all 0.3s ease;
         display: flex;
     }
-    /* Quando ativar: APARECE */
     .itens_menu.ativo {
         opacity: 1;
         transform: translateX(0);
@@ -1039,10 +1069,10 @@ footer .container {
     }
     .itens_menu a {
         font-weight: bold;
-        height: 60px;
-        font-size: 20px;
+        height: 50px;
+        font-size: 16px;
         border: none;
-        margin-left: 50px;
+        margin-left: 30px;
     }
     .itens_menu a:first-child {
         margin-top: 20px;
@@ -1059,5 +1089,247 @@ footer .container {
         align-self: center;
         margin-right: 30px;
         cursor: pointer;
+    }
+/* ABOUT US */
+    .default.light {
+        padding: 0 30px;
+    }
+    .default.default.light .cont_default {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+    }
+    .default .desc_default {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        align-self: center;
+    }
+    .desc_default p {
+        text-align: center;
+    }
+    .desc_default .button_default {
+        margin-bottom: 30px;
+    }
+    .image_default {
+        height:  auto;
+        width: 100%;
+    }
+/* SERVICES */
+    .default.black {
+        height: auto;
+    }
+    .default.black .title_default {
+        margin-top: 60px;
+    }
+    .default.black .cont_default {
+        flex-wrap: wrap;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .default.black .cont_default .cat_default {
+        padding-bottom: 30px;
+        height: 80%;
+        border: none;
+    }
+    .cat_default .simb_default {
+        margin-bottom: -30px;
+    }
+/* PROJECTS */
+    .default.light .opc_default {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .opc_default .opc {
+        flex-wrap: wrap;
+        align-self: center;
+        justify-self: center;
+    }
+    .default.light .container {
+        flex-wrap: wrap;
+    }
+/* EMPRESAS */
+    .default_empresas .container {
+        flex-wrap: wrap;
+        padding: 0 20px;
+        max-width: 1140px;
+    }
+    .default_empresas .container div {
+        margin: 0;
+    }
+    .default_empresas .container div .logo_empresa {
+        height: 35px;
+    }
+    .default_empresas {
+        overflow-x: none;
+    }
+/* PRICE */
+    .default.light.gray .container {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .container .assinaturas {
+        width: 250px;
+        margin-bottom: 30px;
+    }
+    .container .assinaturas:last-child {
+        margin-bottom: 60px;
+    }
+    .cont_plano {
+        display: none;
+    }
+    .default.light.gray .assinaturas .button_default {
+        margin: 30px 0;
+    }
+/* PREMIUM */
+    .default.light.box .container {
+        flex-wrap: nowrap;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box {
+        height: 200px;
+        margin: 40px 0 0 0;
+    }
+    .image_box {
+        width: 30vw;
+    }
+    .cont_box {
+        width: 70vw;
+        padding: 20px 0;
+        margin-bottom: 50px;
+    }
+    .cont_box .desc {
+        padding: 0;
+    }
+    .cont_box h3 {
+        margin-left: 13px;
+    }
+/* SOME FACTS */
+    .cat_default hr {
+        margin-bottom: -50px;
+    }
+    .default.black.facts .cont_default {
+        margin-top: 80px;
+    }
+/* SHARE */
+    .cont_share {
+        display: flex;
+    }
+    .cat_share {
+        align-self: center;
+        justify-self: center;
+        width: 150px;
+    }
+    .cat_share:nth-child(1) p {
+        display: none;
+    }
+    .cat_share:nth-child(1) img {
+        margin-left: -40px;
+    }
+/* CONTACT US */
+    .default.light.gray.contact .title_default h6 {
+        flex-wrap: wrap;
+        text-align: center;
+        line-height: 22px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .default_form {
+        width: 80vw;
+    }
+    .first_line_form input {
+        width: 100%;
+    }
+/* MAP */
+    .cont_map {
+        width: auto;
+        padding: 30px;
+        margin-left: 30px;
+    }
+    .map .container {
+        width: 100vw;
+    }
+/* FOOTER */
+    footer .container {
+        flex-direction: column;
+        width: 80vw;
+        align-items: center;
+    }
+    .icons {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .text {
+        text-align: center;
+        margin: 30px 0;
+        width: 80vw;
+    }
+    .text p {
+        flex-wrap: wrap;
+    }
+    .subscribe {
+        width: 80vw;
+    }
+}
+
+/* ALINHAMENTO DO DEFAULT EMPRESAS QUE FOGE DO WRAP */
+@media (min-width: 440px) and (max-width: 640px) {
+    .default_empresas .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 itens por linha */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .slide:first-child .cont_slide h1 {
+        font-size: clamp(28px, 8vw, 60px);
+        text-align: center;
+    }
+    .banner h5 {
+        font-size: clamp(17px, 5vw, 25px);
+    }
+    .opc_default .opc {
+        padding: 15px 9px;
+        border-left: none;
+        border-right: none;
+    }
+    .opc_default .opc:first-child {
+        padding-left: 9px;
+    }
+    .opc_default .opc:last-child {
+        padding-right: 9px;
+    }
+    .cat_share:nth-child(1) p {
+        font-size: 8px;
+    }
+    .icons div {
+        flex: 0 0 calc(100% / 5);
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cont_map .line p {
+        font-size: 10px;
+        flex-wrap: wrap;
+        display: none;
+    }
+    .cont_map {
+        margin-left: 40px;
+    }
+    .map .container {
+        flex-direction: row ;
+    }
+    .local_map {
+        padding: 0 70px;
     }
 }
